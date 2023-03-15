@@ -12,7 +12,7 @@ const Weather = () => {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const key = import.meta.env.VITE_API_KEY;
+  const key = import.meta.env.VITE_API_WEATHER_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchState}&appid=${key}&lang=es&units=metric`;
 
   useEffect(() => {
