@@ -12,7 +12,7 @@ const Weather = () => {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const key = "bb814428700d6c6f13f60200afcbc4c7";
+  const key = import.meta.env.VITE_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchState}&appid=${key}&lang=es&units=metric`;
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Weather = () => {
             <SearchIcon src={searchIcon} alt="" />
             <SearchInput
               type="text"
-              placeholder="Ciudad, ejemplo Paris"
+              placeholder="Ejemplo: Santiago"
               onChange={(e) => setSearchInput(e.target.value)}
             />
           </SearchContainer>
@@ -116,14 +116,8 @@ const SearchContainer = styled.div`
   width: clamp(100px, 90vw, 300px);
   height: 50px;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  /* gap: 0.5rem; */
-  /* background-color: #ffffff; */
-  /* border: solid gray; */
-  border-radius: 1rem;
+  /* border-radius: .5rem; */
   padding: 0.2rem;
-  /* overflow: hidden; */
   position: relative;
 `;
 
@@ -131,9 +125,6 @@ const SearchIcon = styled.img`
   width: 30px;
   aspect-ratio: 1/1;
   object-fit: contain;
-  /* aspect-ratio:1/1; */
-  /* background-color: #314cb0; */
-  /* object-fit: contain; */
   position: absolute;
   top: 10px;
   left: 10px;
@@ -147,21 +138,24 @@ const SearchInput = styled.input`
   text-indent: 3rem;
   border: none;
   font-size: clamp(10px, 7vw, 18px);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+
+  :focus {
+    outline: 2px solid #1616d4;
+  }
 `;
 
 const Header = styled.header`
   width: 90%;
   display: flex;
   justify-content: space-between;
-  /* background-color: red; */
 `;
 
 const WeatherContainer = styled.div`
   width: clamp(300px, 90vw, 700px);
   min-height: 400px;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 4px 4px 10px 0.5px #474747a0;
   margin-top: 1rem;
   padding: 1rem;
@@ -177,7 +171,6 @@ const GridContainer = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  /* background-color: green; */
   grid-template-columns: 1fr;
   gap: 0.5rem;
 
@@ -193,14 +186,13 @@ const Link = styled.a`
 
 const Footer = styled.footer`
   width: 100%;
-  /* background-color: red; */
   text-align: right;
 
   span {
     font-size: clamp(8px, 4vw, 16px);
     font-weight: 500;
     background-color: #1616d4cc;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     padding: 0.3rem 0.4rem;
     color: white;
   }

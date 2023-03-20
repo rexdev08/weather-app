@@ -17,14 +17,10 @@ const GridTile = (props) => {
 };
 
 const Tile = styled.div`
-  /* width:100%; */
-  /* border: solid red; */
   display: flex;
   flex-flow: row;
   justify-content: start;
   align-items: center;
-
-  /* border: 2px solid #1616d4c3; */
   border-radius: 0.5rem;
 
   overflow: hidden;
@@ -45,8 +41,10 @@ const ImageContainer = styled.div`
 `;
 const Image = styled.img`
   width: clamp(50px, 7vw, 90px);
+  aspect-ratio: 1/1;
   background-color: white;
   border-radius: 50%;
+  outline: #2c2ce395 solid;
   padding: 0.5rem;
 `;
 const TextContainer = styled.div`
@@ -59,7 +57,6 @@ const TextContainer = styled.div`
   flex: 1;
   background-color: #1616d4c3;
   padding: 0.5rem;
-  border-top: 2px solid #1616d4c3;
   color: white;
 `;
 

@@ -19,10 +19,10 @@ const GlobalStyles = createGlobalStyle`
     //span and p
 
     --fs-p:clamp(14px, 7vw, 16px);
-    --fs-span:clamp(12px, 5vw, 22px);
+    --fs-span:clamp(12px, 5vw, 18px);
    
     --fw-p:500;
-    --fw-span:500; 
+    --fw-span:600; 
    
 
 }
